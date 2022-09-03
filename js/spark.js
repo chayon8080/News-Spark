@@ -2,6 +2,11 @@ const loadCatagories = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`
     const res = await fetch(url);
     const data = await res.json();
+    try {
+        await Promise.reject(new Error('Oops!'));
+    } catch (error) {
+        error.message; // "Oops!"
+    }
     displayCatagories(data.data.news_category);
 }
 
@@ -17,17 +22,23 @@ const displayCatagories = (items) => {
         catagoriesContainer.appendChild(li);
 
     })
+
 }
 
 const loadItemsData = async (itemId) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${itemId}`
     const res = await fetch(url);
     const data = await res.json();
+    try {
+        await Promise.reject(new Error('Oops!'));
+    } catch (error) {
+        error.message; // "Oops!"
+    }
     displayCatagoriesDetails(data.data);
-    console.log(data);
 }
 
 const displayCatagoriesDetails = (itemDetails) => {
+    loadSpinner(true)
     const detailsContainer = document.getElementById('news-container');
     detailsContainer.innerHTML = "";
     const notFound = document.getElementById('not-found');
@@ -64,7 +75,7 @@ const displayCatagoriesDetails = (itemDetails) => {
         detailsContainer.appendChild(div);
 
     })
-
+    loadSpinner(false);
     document.getElementById('countData').value = `${itemDetails.length} items found`;
 
 }
@@ -74,7 +85,11 @@ const loadModalDetails = async (category_id, id) => {
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.data, id)
+    try {
+        await Promise.reject(new Error('Oops!'));
+    } catch (error) {
+        error.message; // "Oops!"
+    }
     displayModalDetails(data.data, id);
 }
 const displayModalDetails = (modals, id) => {
@@ -95,6 +110,15 @@ const displayModalDetails = (modals, id) => {
       `;
 }
 
+const loadSpinner = isLoading => {
+    const spinner = document.getElementById("loading");
+    if (isLoading) {
+        spinner.classList.remove('d-none');
+    }
+    else {
+        spinner.classList.add('d-none');
+    }
+}
 
 
 loadCatagories();
