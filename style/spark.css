@@ -13,3 +13,8 @@
     border-radius: 50%;
     padding: 10px;
 }
+
+.icon:hover {
+    color: rgb(78, 78, 248);
+    transform: scale(1.5);
+}

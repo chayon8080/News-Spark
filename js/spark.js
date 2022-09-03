@@ -28,6 +28,7 @@ const loadItemsData = async (itemId) => {
 
 const displayCatagoriesDetails = (itemDetails) => {
     const detailsContainer = document.getElementById('news-container');
+    detailsContainer.innerHTML = "";
     itemDetails.forEach(detail => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -37,15 +38,18 @@ const displayCatagoriesDetails = (itemDetails) => {
                        <div><img src="${detail.image_url}" class="card-img-top imageAdj py-3" alt="..."></div>
                        <div class="card-body container">
                            <div>
-                           <h5 class="card-title">${detail.title}</h5>
+                           <h5 class="card-title">${detail.title ? detail.title : "No Title found"}</h5>
                            <p class="card-text">${detail.details.slice(0, 200)}</p>
                            </div>
                            
                        </div></div>
-                        <div class="d-flex flex-row img-body">
-                        <img  src="${detail.author.img}" class="card-img-top" alt="...">
-                        <p >${detail.author.name}</p>
+                        <div class="d-flex flex-row justify-content-around img-body">
+                        <img  src="${detail.author.img ? detail.author.img : "No img found"}" class="card-img-top" alt="...">
+                        <div><p >${detail.author.name ? detail.author.name : "No name found"}</p><p >${detail.author.published_date ? detail.author.published_date : "No date found"}</p></div>
+                        <div><i class="fa-solid fa-eye"></i> <span class="fw-bold">${detail.total_view ? detail.total_view : "No data found"}</span></div>
+                        <div><i class="fa-solid fa-right-long icon"></i></div>
                         </div>
+                        
                     </div>
 
                     `
