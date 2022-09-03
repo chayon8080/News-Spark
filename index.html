@@ -42,20 +42,57 @@
         <hr>
     </header>
     <main>
+
         <section>
             <ul id="catagories" class="navbar-nav d-flex flex-row justify-content-around">
             </ul>
         </section>
         <section>
+            <div class="input-group flex-nowrap">
+                <input id="countData" type="text" class="form-control" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+        </section>
+
+        <section>
             <div id="news-container" class="row row-cols-1 row-cols-md-3 g-4">
 
             </div>
         </section>
+        <div id="not-found" class="container mt-4 d-none">
+            <h3 class="bg-danger mt-5 p-2 text-dark bg-opacity-25 rounded">
+                No News Found. Please Click anothe Option.
+            </h3>
+        </div>
 
+        <!------------------- Modal -------------------->
 
+        <section>
+            <div class="modal fade" id="blogDetailsModal" tabindex="-1" aria-labelledby="blogDetailsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="blogDetailsModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="modal-details" class="modal-body">
 
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+
+    <!-- footer section -->
+    <footer>
+
+    </footer>
 
 
     <!-- bootstarp linked -->
