@@ -17,35 +17,50 @@
 
 <body class="container">
     <header>
-        <nav>
-            <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand fw-bold" href="#"><span
-                            class="border border-primary rounded text-white bg-primary">Nav</span>
-                        bar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <div>
+                        <a class="navbar-brand fw-bold" href="#"><span
+                                class="border border-primary rounded text-white bg-primary">News-spark</span>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNava"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        </ul>
-                        <div class="d-flex">
-                            <a class="p-2" id="News-catagories" href="">News</a>
-                            <a class="p-2" href="">Blog</a>
+                    <div class="collapse navbar-collapse" id="navbarNava">
+                        <div class="d-flex nav-bar ">
+                            <a class="p-3" href="">News</a>
+                            <a class="p-3" href="">Blog</a>
                         </div>
                     </div>
                 </div>
             </nav>
-        </nav>
+        </div>
         <hr>
     </header>
     <main>
 
         <section>
-            <ul id="catagories" class="navbar-nav d-flex flex-row justify-content-around">
-            </ul>
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul id="catagories" class="navbar-nav  ">
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
         </section>
         <section>
             <div class="input-group flex-nowrap">
@@ -61,7 +76,7 @@
         </section>
         <div id="not-found" class="container mt-4 d-none">
             <h3 class="bg-danger mt-5 p-2 text-dark bg-opacity-25 rounded">
-                No News Found. Please Click anothe Option.
+                No News Found In This catagory. Please Click anothe Option.
             </h3>
         </div>
 
@@ -98,10 +113,14 @@
     </main>
 
 
-    <!-- footer section -->
-    <footer>
+    <!-- footer section start -->
+    <div class="footer-point ">
+        <div class="last-footer">
+            <p class="footer-last-point">Copyright @ 2022 All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- footer section end -->
 
-    </footer>
 
 
     <!-- bootstarp linked -->

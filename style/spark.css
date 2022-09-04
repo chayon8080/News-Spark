@@ -2,11 +2,6 @@
     color: #1f1ff9;
 }
 
-.imageAdj {
-    height: 280px;
-    width: 200px;
-}
-
 .img-body img {
     height: 50px;
     width: 40px;
@@ -17,4 +12,50 @@
 .icon:hover {
     color: rgb(78, 78, 248);
     transform: scale(1.5);
+}
+
+.nav-bar {
+    margin: auto;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #134ff7;
+    font-size: 20px;
+    padding: 0px 20px;
+}
+
+.navbar-nav {
+    margin-left: 100px;
+}
+
+.navbar-nav li a:hover {
+    color: #134ff7;
+    background-color: #d3dfff;
+    border-radius: 40px;
+}
+
+.textSizing {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* footer */
+.last-footer {
+
+    color: black;
+    text-align: center;
+}
+
+.footer-point {
+    background-color: whitesmoke;
+    padding: 100px 0px 50px 0px;
+
+}
+
+.footer-last-point {
+    border-top: 1px solid gray;
+    padding-top: 30px;
+    margin: 0px 70px;
+    opacity: 0.25;
 }

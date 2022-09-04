@@ -17,7 +17,7 @@ const displayCatagories = (items) => {
         const li = document.createElement('li');
         li.classList.add('nav-item')
         li.innerHTML = `
-<a id="items" class="nav-link active" onclick="loadItemsData('${item.category_id}')" aria-current="page" href="#"  >${item.category_name}</a>
+<a id="items" class="nav-link p-3" onclick="loadItemsData('${item.category_id}')" aria-current="page" href="#"  >${item.category_name}</a>
 `
         catagoriesContainer.appendChild(li);
 
@@ -36,8 +36,10 @@ const loadItemsData = async (itemId) => {
     }
     displayCatagoriesDetails(data.data);
 }
-
 const displayCatagoriesDetails = (itemDetails) => {
+    itemDetails.sort(function (a, b) {
+        return b.total_view - a.total_view;
+    })
     loadSpinner(true)
     const detailsContainer = document.getElementById('news-container');
     detailsContainer.innerHTML = "";
@@ -53,12 +55,12 @@ const displayCatagoriesDetails = (itemDetails) => {
         div.classList.add('col');
         div.innerHTML = `
         <div class="card">
-                       <div class="d-flex flex-row">
-                       <div><img src="${detail.image_url}" class="card-img-top imageAdj py-3" alt="..."></div>
+                       <div class="">
+                       <div><img src="${detail.image_url}" class="card-img-top" alt="..."></div>
                        <div class="card-body container">
                            <div>
                            <h5 class="card-title">${detail.title ? detail.title : "No Title found"}</h5>
-                           <p class="card-text">${detail.details.slice(0, 200)}...</p>
+                           <p class="card-text textSizing">${detail.details.slice(0, 200)}...</p>
                            </div>
                            
                        </div></div>
