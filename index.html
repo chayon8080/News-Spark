@@ -32,7 +32,7 @@
                     <div class="collapse navbar-collapse" id="navbarNava">
                         <div class="d-flex nav-bar ">
                             <a class="p-3" href="">News</a>
-                            <a class="p-3" href="">Blog</a>
+                            <a class="p-3" href="blog.html">Blog</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,23 @@
                     aria-describedby="addon-wrapping">
             </div>
         </section>
-
+        <!-- short by default -->
+        <section class="my-5">
+            <div class="d-flex flex-row">
+                <h3>Short by :</h3>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Default
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">By name</a></li>
+                        <li><a class="dropdown-item" href="#">By Title</a></li>
+                        <li><a class="dropdown-item" href="#">By ID</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <section>
             <div id="news-container" class="row row-cols-1 row-cols-md-3 g-4">
 

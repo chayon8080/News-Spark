@@ -1,13 +1,13 @@
 const loadCatagories = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`
-    const res = await fetch(url);
-    const data = await res.json();
     try {
-        await Promise.reject(new Error('Oops!'));
-    } catch (error) {
-        error.message; // "Oops!"
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCatagories(data.data.news_category);
     }
-    displayCatagories(data.data.news_category);
+    catch (error) {
+        console.log(error)
+    }
 }
 
 
@@ -27,14 +27,14 @@ const displayCatagories = (items) => {
 
 const loadItemsData = async (itemId) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${itemId}`
-    const res = await fetch(url);
-    const data = await res.json();
     try {
-        await Promise.reject(new Error('Oops!'));
-    } catch (error) {
-        error.message; // "Oops!"
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCatagoriesDetails(data.data);
     }
-    displayCatagoriesDetails(data.data);
+    catch (error) {
+        console.log(error)
+    }
 }
 const displayCatagoriesDetails = (itemDetails) => {
     itemDetails.sort(function (a, b) {
@@ -85,14 +85,15 @@ loadItemsData('08', "All News");
 
 const loadModalDetails = async (category_id, id) => {
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
-    const res = await fetch(url);
-    const data = await res.json();
+
     try {
-        await Promise.reject(new Error('Oops!'));
-    } catch (error) {
-        error.message; // "Oops!"
+        const res = await fetch(url);
+        const data = await res.json();
+        displayModalDetails(data.data, id);
     }
-    displayModalDetails(data.data, id);
+    catch (error) {
+        console.log(error)
+    }
 }
 const displayModalDetails = (modals, id) => {
     const index = modals.indexOf(modals.find(modalItem => modalItem._id === id));
